@@ -37,10 +37,6 @@
                       <textarea name="descripcion" id="descripcion">{{ $preferencia->descripcion }}</textarea><br>
                       {!!Form::submit ('Guardar')!!}
                     {{ Form::close() }}
-
-                    {{ Form::open(['route' => ['preferencia.destroy', $preferencia->id_preferencia],  'method' => 'DELETE']) }}
-                    {!!Form::submit ('Eliminar')!!}
-                    {{ Form::close() }}
                 </ul>
               </div>
             </table>

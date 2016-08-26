@@ -36,7 +36,10 @@
                 <td>{{$preferencia->nombre}}</td>
                 <td>{{$preferencia->descripcion}}</td>
                 <td>
-                  <a href="{{ route('preferencia/item', $preferencia->id_preferencia) }}">Editar o Eliminar</a>
+                   <a href="{{ route('preferencia.edit', $preferencia->id_preferencia) }}"><button class="btn btn-primary btn-xs" type="submit">Editar<i class="fa fa-trash-o "></i>
+                  </button></a>
+                  <a href="{{ route('preferencia.destroy', $preferencia->id_preferencia) }}"><button class="btn btn-danger btn-xs" type="submit" >Eliminar<i class="fa fa-trash-o "></i>
+                  </button></a>
                 </td>
               </tr>
               @endforeach

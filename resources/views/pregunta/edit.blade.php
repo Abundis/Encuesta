@@ -46,9 +46,7 @@
                     </select></br></br>
                     {{ Form::submit ('Guardar') }}
             {{  Form::close() }}
-            {{ Form::open(['route' => ['pregunta.destroy', $pregunta->id_pregunta],  'method' => 'DELETE']) }}
-                    {!!Form::submit ('Eliminar')!!}
-            {{ Form::close() }}
+            
             </ul>
             </div>
         </table>

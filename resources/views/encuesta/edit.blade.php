@@ -17,7 +17,7 @@
                 <ul class="nav nav-pills nav-stacked">
                   <li role="presentation"><a href="/preferencia"><font color="1a242f">Preferencias</font></a></li>
                   <li role="presentation"><a href="/pregunta"><font color="1a242f">Preguntas</font></a></li>
-                  <li role="presentation" class="active"><a href="#"><font color="#FFF">Encuestas</font></a></li>
+                  <li role="presentation" class="active"><a href="/encuesta"><font color="#FFF">Encuestas</font></a></li>
                   <li role="presentation"><a href="/usuario"><font color="1a242f">Usuarios</font></a></li>
                   <li role="presentation"><a href="/encuestado"><font color="1a242f">Encuestados</font></a></li>
                   <li role="presentation"><a href="#"><font color="1a242f">Cerrar Sesión</font></a></li>
@@ -37,16 +37,13 @@
                 <label>Titulo de la Encuesta</label><br>
                 <input value="{{ $encuesta->nombre_encuesta }}" name="nameEncuesta" id="nameEncuesta" required type="text"/><br>
                 <label>Descripción</label><br>
-                <textarea value="{{ $encuesta->descripcion }}" name="descripcion" id="descripcion"></textarea><br>
+                <textarea name="descripcion" id="descripcion">{{ $encuesta->descripcion }}</textarea><br>
                 <label>Dinero de la encuesta</label><br>
                 <input value="{{ $encuesta->dinero }}" type="number" name="dineroEncuesta" id="dinero" min="10" max="1000" step="10" required/><br/><br/>
                 <label>Total de preguntas</label><br>
                 <input value="{{ $encuesta->tot_preguntas }}" type="number" name="numPreguntas" id="preguntas" min="1" max="20" required/><br/><br/>
                 {{ Form::submit ('Guardar') }}
             {{  Form::close() }}
-            {{ Form::open(['route' => ['encuesta.destroy', $encuesta->id_encuesta],  'method' => 'DELETE']) }}
-                    {!!Form::submit ('Eliminar')!!}
-            {{ Form::close() }}
             </ul>
             </div>
         </table>

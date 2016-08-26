@@ -36,5 +36,7 @@ class EncuestadoController extends Controller
     public function show(){
 
     }
+
+     
 }
 

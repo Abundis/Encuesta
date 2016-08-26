@@ -13,10 +13,9 @@ use Encuesta\Http\Requests;
 class PreguntaController extends Controller
 {
     public function index(){
-        $preguntas = \Encuesta\Banco_Preguntas::All();
-        $preferencias = Preferencias::All();
+        $preguntas = \Encuesta\Banco_Preguntas::
+        join('Preferencias','Preferencias.id_preferencia','=','Banco-Preguntas.id_preferencia')->get();
         return view('pregunta.list')->with([
-                'preferenciasP' => $preferencias,
                 'preguntas' => $preguntas,
             ]);
         //return view('pregunta.list',compact('preguntas'));

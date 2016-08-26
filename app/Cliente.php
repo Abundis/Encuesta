@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\Cliente as Authenticatable;
 //use Illuminate\Auth\Authenticatable;
 
 
-class Cliente extends Authenticatable
+class Cliente extends Model
 {
 	//use Authenticatable;
 	

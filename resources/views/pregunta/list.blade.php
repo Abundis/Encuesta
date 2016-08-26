@@ -24,8 +24,8 @@
                 </ul>
             </ul>
             </div>
-            <div class="col-lg-4">
-            <table width="100%" cellspacing="0" cellpadding="2">
+            <div class="col-lg-5">
+            <table width="100%" cellspacing="10" cellpadding="2o">
               <tr>
                 <td><label>Titulo de Pregunta</label></td>
                 <td><label>Preferencia</label></td> 
@@ -35,10 +35,13 @@
               @foreach ($preguntas as $pregunta)
               <tr>
                 <td>{{$pregunta->pregunta}}</td>
-                <td>{{$pregunta->id_preferencia}}</td>
+                <td>{{$pregunta->nombre}}</td>
                 <td>{{$pregunta->tipo}}</td>
                 <td>
-                  <a href="{{ route('pregunta.edit', $pregunta->id_pregunta) }}">Editar o Eliminar</a>
+                  <a href="{{ route('pregunta.edit', $pregunta->id_pregunta) }}"><button class="btn btn-primary btn-xs" type="submit">Editar<i class="fa fa-trash-o "></i>
+                  </button></a>
+                  <a href="{{ route('pregunta.destroy', $pregunta->id_pregunta) }}"><button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Estas seguro que deseas eliminar la pregunta?")'>Eliminar<i class="fa fa-trash-o "></i>
+                  </button></a>
                 </td>
               </tr>
               @endforeach

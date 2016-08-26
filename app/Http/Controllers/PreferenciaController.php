@@ -34,7 +34,7 @@ class PreferenciaController extends Controller
 
     }
 
-    public function item($id){
+    public function edit($id){
         $preferencia = \Encuesta\Preferencias::findOrFail($id);
         return view('preferencia.edit', compact('preferencia'));
     }

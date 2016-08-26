@@ -36,12 +36,15 @@
               @foreach ($encuestas as $encuesta)
               <tr>
                 <td>{{$encuesta->nombre_encuesta}}</td>
-                <td>{{$encuesta->id_preferencia}}</td>
+                <td>{{$encuesta->nombre}}</td>
                 <td>{{$encuesta->descripcion}}</td>
                 <td>{{$encuesta->dinero}}</td>
                 <td>{{$encuesta->tot_preguntas}}</td>
                 <td>
-                  <a href="{{ route('encuesta.edit', $encuesta->id_encuesta) }}">Editar o Eliminar</a>
+                  <a href="{{ route('encuesta.edit', $encuesta->id_encuesta) }}"><button class="btn btn-primary btn-xs" type="submit">Editar<i class="fa fa-trash-o "></i>
+                  </button></a>
+                  <a href="{{ route('encuesta.destroy', $encuesta->id_encuesta) }}"><button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Estas seguro que deseas eliminar la encuesta?")'>Eliminar<i class="fa fa-trash-o "></i>
+                  </button></a>
                 </td>
               </tr>
               @endforeach

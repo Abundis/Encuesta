@@ -56,4 +56,10 @@ class UsuarioController extends Controller
 
         return Redirect::to('usuario');
     }
+
+    public function destroy($id){
+        User::destroy($id);
+
+        return Redirect::to('usuario');
+    }
 }

@@ -18,7 +18,7 @@ Route::get('perfil', 'FrontController@perfil');
 Route::post('encuestador', 'EncuestadorController@create');
 
 //Route::get('pregunta/edit/{id}',[ 'uses' => 'PreguntaController@edit', 'as' =>'preferencia/item']);
-Route::get('preferencia/item/{id}',[ 'uses' => 'PreferenciaController@item', 'as' =>'preferencia/item']);
+//Route::get('preferencia/item/{id}',[ 'uses' => 'PreferenciaController@item', 'as' =>'preferencia/item']);
 
 Route::resource('preferencia', 'PreferenciaController');
 Route::resource('pregunta', 'PreguntaController');

@@ -43,7 +43,10 @@
                 <td>*******</td>
                 <td>{{$usuario->tipo}}</td>
                 <td>
-                  <a href="{{ route('usuario.edit', $usuario->usuario) }}">Editar o Eliminar</a>
+                   <a href="{{ route('usuario.edit', $usuario->usuario) }}"><button class="btn btn-primary btn-xs" type="submit">Editar<i class="fa fa-trash-o "></i>
+                  </button></a>
+                  <a href="{{ route('usuario.destroy', $usuario->usuario) }}"><button class="btn btn-danger btn-xs" type="submit" onclick='return confirm("¿Estas seguro que deseas eliminar el usuario?")'>Eliminar<i class="fa fa-trash-o "></i>
+                  </button></a>
                 </td>
               </tr>
               @endforeach

@@ -14,7 +14,8 @@ use Encuesta\Http\Requests;
 class EncuestaController extends Controller
 {
     public function index(){
-        $encuestas = \Encuesta\Encuesta::All();
+        $encuestas = \Encuesta\Encuesta::
+        join('Preferencias','Preferencias.id_preferencia','=','Encuestas.id_preferencia')->get();
         return view('encuesta.list',compact('encuestas'));
     }
 
@@ -44,11 +45,11 @@ class EncuestaController extends Controller
     }
 
     public function edit($id){
-        $encuesta = \Encuesta\Encuesta::findOrFail($id);
+        $encuestas = \Encuesta\Encuesta::findOrFail($id);
         $preferencias = Preferencias::All();
         return view('encuesta.edit')->with([
                 'preferenciasE' => $preferencias,
-                'encuesta' => $encuesta,
+                'encuesta' => $encuestas,
             ]);
     }
 
